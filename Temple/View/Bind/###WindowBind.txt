@@ -1,0 +1,58 @@
+﻿using FairyGUI;
+using Loxodon.Framework.Binding;
+using UnityEngine;
+using ZhiBenJia.ZHouse.Mobile.Views.###.Control;
+using ZhiBenJia.ZHouse.Mobile.Views.###.ViewModel;
+using ZhiBenJia.ZHouse.Mobile.Views.Skin.###Window;
+
+namespace ZhiBenJia.ZHouse.Mobile.Views.###.View.Bind
+{
+    public class ###WindowBind:MonoBehaviour
+    {
+        private SkinMain _skinMain;
+
+        //private bool _showWalls;
+        //public bool ShowWalls
+        //{
+        //    get => _showWalls;
+        //    set
+        //    {
+        //        _showWalls = value;
+        //        _skinMain.ShortcutBar_3d.ShowWallsBtn.selected = _showWalls;
+        //    }
+        //}
+
+        //控制器页面索引
+        //private int _controllerIndex;
+        //public int ControllerIndex
+        //{
+        //    get => _controllerIndex;
+        //    set
+        //    {
+        //        _controllerIndex = value;
+        //        if (_skinMain != null) _skinMain.c1.selectedIndex = _controllerIndex;
+        //    }
+        //}
+        
+
+        public void SetBindData(GComponent gComponent)
+        {
+            _skinMain = gComponent as SkinMain;
+
+            BindData();
+        }
+
+        private void BindData()
+        {
+            var viewModel = ###Control.Model.###Vm;
+            this.CreateBindingSet(viewModel);
+            var bindingSet = this.CreateBindingSet<###WindowBind, ###ViewModel>();
+            //bindingSet.Bind(_skinMain.ShortcutBar_3d.ShowWallsBtn).For(v => v.onClick).To<GButton>(vm => vm.SetShowWalls).CommandParameter(_skinMain.ShortcutBar_3d.ShowWallsBtn);
+            //bindingSet.Bind(this).For(v => v.ShowWalls).To(vm => vm.ShowWalls).OneWay();
+            //bindingSet.Bind(this).For(v => v.ControllerIndex).To(vm => vm.ControllerIndex).TwoWay();
+            //bindingSet.Bind(_skinMain.ShortcutBar_3d.ExportBtn).For(v => v.onClick).To<int>(vm => vm.SetControllerIndex).CommandParameter(1);
+
+            bindingSet.Build();
+        }
+    }
+}

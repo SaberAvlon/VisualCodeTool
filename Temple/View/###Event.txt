@@ -1,0 +1,8 @@
+﻿namespace ZhiBenJia.ZHouse.Mobile.Views.###.View
+{
+    public class ###Event
+    {
+        public const string OpenView = "###Event_OpenView";
+        public const string CloseView = "###Event_CloseView";
+    }
+}
