@@ -1,1 +1,1 @@
-# VisualCodeMVVMTool
+# VisualCodeTool
