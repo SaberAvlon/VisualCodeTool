@@ -22,6 +22,7 @@ namespace MVVMCreater
         /// 生成代码
         /// </summary>
         /// <param name="templeName"></param>
+        /// <param name="createPath"></param>
         public static void GenCode(string templeName,string createPath)
         {
             string TargetPath =createPath + "/";
@@ -41,6 +42,22 @@ namespace MVVMCreater
             GenCodeHandle(directory, templeName, ViewModelPath, "ViewModel", "ViewModel");
             //Helper
             GenCodeHandle(directory, templeName, HelperPath, "", "Helper");
+        }
+
+        public static void GenSingleVmCode(string templeName, string createPath)
+        {
+            string TargetPath = createPath + "/";
+            string directory = TargetPath + templeName;
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
+            GenCodeHandle(directory, templeName, ViewBindPath, "View/Bind", "Bind");
+            //ViewModel
+            GenCodeHandle(directory, templeName, ViewModelPath, "ViewModel", "ViewModel");
+        }
+
+        public static void GenGListVmCode(string templeName, string createPath)
+        {
+
         }
 
         private static void GenCodeHandle(string directory, string templeName, string partPath,string partStr,string partName)
