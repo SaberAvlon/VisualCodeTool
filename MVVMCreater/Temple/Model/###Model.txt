@@ -1,0 +1,15 @@
+﻿using Assets.ZhiBenJia.ZHouse.View.Code;
+using ZhiBenJia.ZHouse.Mobile.Views.###.ViewModel;
+
+namespace ZhiBenJia.ZHouse.Mobile.Views.###.Model
+{
+    public class ###Model : ModelBase
+    {
+        public ###ViewModel ###Vm;
+        
+        public void InitViewMode()
+        {
+            ###Vm = new ###ViewModel(this);
+        }
+    }
+}
