@@ -19,8 +19,18 @@ namespace MVVMCreater
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox1.Text))
-                TempleHelper.GenCode(textBox1.Text);
+            FolderBrowserDialog folder = new FolderBrowserDialog();
+            string path="";
+            if (folder.ShowDialog() == DialogResult.OK)
+            {
+                path= folder.SelectedPath;
+
+            }
+            if (!string.IsNullOrEmpty(path)&&!string.IsNullOrEmpty(textBox1.Text))
+            {
+                if (!string.IsNullOrEmpty(textBox1.Text))
+                    TempleHelper.GenCode(textBox1.Text, path);
+            }
             Close();
         }
 

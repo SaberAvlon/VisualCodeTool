@@ -4,15 +4,13 @@ namespace MVVMCreater
 {
     public class TempleHelper
     {
-        public static string TargetPath = "E:/ZHouseMobile/ZhiBenJia.ZHouse.Mobile/Views/";
-
-        public static string ControlPath = @"E:/Temple/Control/###Control.txt";
-        public static string ModelPath = @"E:/Temple/Model/###Model.txt";
-        public static string ViewPath = @"E:/Temple/View/###Window.txt";
-        public static string ViewEventPath = @"E:/Temple/View/###Event.txt";
-        public static string ViewBindPath = @"E:/Temple/View/Bind/###WindowBind.txt";
-        public static string ViewModelPath = @"E:/Temple/ViewModel/###ViewModel.txt";
-        public static string HelperPath = @"E:/Temple/###Helper.txt";
+        public static string ControlPath = @"/Temple/Control/###Control.txt";
+        public static string ModelPath = @"/Temple/Model/###Model.txt";
+        public static string ViewPath = @"/Temple/View/###Window.txt";
+        public static string ViewEventPath = @"/Temple/View/###Event.txt";
+        public static string ViewBindPath = @"/Temple/View/Bind/###WindowBind.txt";
+        public static string ViewModelPath = @"/Temple/ViewModel/###ViewModel.txt";
+        public static string HelperPath = @"/Temple/###Helper.txt";
 
         public string LoadJsonStrFromFile(string filePath)
         {
@@ -24,8 +22,9 @@ namespace MVVMCreater
         /// 生成代码
         /// </summary>
         /// <param name="templeName"></param>
-        public static void GenCode(string templeName)
+        public static void GenCode(string templeName,string createPath)
         {
+            string TargetPath =createPath + "/";
             string directory = TargetPath + templeName;
             if (!Directory.Exists(directory))
                 Directory.CreateDirectory(directory);
@@ -49,7 +48,7 @@ namespace MVVMCreater
             string dir = directory + $"/{partStr}";
             if (!Directory.Exists(dir))
                 Directory.CreateDirectory(dir);
-            string content = File.ReadAllText(partPath);
+            string content = File.ReadAllText(System.Windows.Forms.Application.StartupPath+partPath);
             if (!string.IsNullOrEmpty(content)) {
                 content = content.Replace("###", templeName);
                 File.WriteAllText(dir + $"/{templeName}{partName}.cs", content);

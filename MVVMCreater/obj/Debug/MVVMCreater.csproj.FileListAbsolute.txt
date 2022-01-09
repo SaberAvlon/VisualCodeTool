@@ -18,3 +18,12 @@ E:\OtherProject\C#\MVVMCreater\MVVMCreater\obj\Debug\MVVMCreater.csproj.Generate
 E:\OtherProject\C#\MVVMCreater\MVVMCreater\obj\Debug\MVVMCreater.csproj.CoreCompileInputs.cache
 E:\OtherProject\C#\MVVMCreater\MVVMCreater\obj\Debug\MVVMCreater.exe
 E:\OtherProject\C#\MVVMCreater\MVVMCreater\obj\Debug\MVVMCreater.pdb
+F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\bin\Debug\MVVMCreater.exe.config
+F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\bin\Debug\MVVMCreater.exe
+F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\bin\Debug\MVVMCreater.pdb
+F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.Form1.resources
+F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.Properties.Resources.resources
+F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.csproj.GenerateResource.cache
+F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.csproj.CoreCompileInputs.cache
+F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.exe
+F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.pdb
