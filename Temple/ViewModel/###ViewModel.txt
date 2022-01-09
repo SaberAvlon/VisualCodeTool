@@ -1,0 +1,17 @@
+﻿using Loxodon.Framework.ViewModels;
+using ZhiBenJia.ZHouse.Mobile.Views.###.Model;
+
+namespace ZhiBenJia.ZHouse.Mobile.Views.###.ViewModel
+{
+    public class ###ViewModel: ViewModelBase
+    {
+        private readonly ###Model _model;
+
+        public ###ViewModel(###Model model)
+        {
+            _model = model;
+            
+        }
+
+    }
+}
