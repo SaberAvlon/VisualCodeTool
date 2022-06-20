@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MVVMCreater.Properties
+namespace MvvmCreater.Properties
 {
 
 

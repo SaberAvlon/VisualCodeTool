@@ -5,20 +5,11 @@ namespace ZhiBenJia.ZHouse.Mobile.Views.###.Model
 {
     public class ###Model : ModelBase
     {
-        public IMessenger Messenger;
+       public IMessenger Messenger;
         public ###ViewModel ###Vm;
         public bool IsWindowOpen;
         public void InitViewMode()
         {
             Messenger = new Messenger();
-            ###Vm = new ###ViewModel(Messenger);
-        }
-        public void Dispose()
-        {
-            Messenger = null;
-
-            ###Vm?.Dispose();
-            ###Vm= null;
-        }
-    }
-}
+            ###Vm = new ###ViewModel(Messenger );
+   

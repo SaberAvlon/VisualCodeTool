@@ -27,3 +27,13 @@ F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.cs
 F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.exe
 F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.pdb
 F:\1.WorkPlaceOut\GiteePlace\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.ToolForm.resources
+S:\StudyPlace\Unity3d\VisualCodeTool\MVVMCreater\bin\Debug\MVVMCreater.exe.config
+S:\StudyPlace\Unity3d\VisualCodeTool\MVVMCreater\bin\Debug\MVVMCreater.exe
+S:\StudyPlace\Unity3d\VisualCodeTool\MVVMCreater\bin\Debug\MVVMCreater.pdb
+S:\StudyPlace\Unity3d\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.ToolForm.resources
+S:\StudyPlace\Unity3d\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.Properties.Resources.resources
+S:\StudyPlace\Unity3d\VisualCodeTool\MVVMCreater\obj\Debug\MvvmCreater.csproj.GenerateResource.cache
+S:\StudyPlace\Unity3d\VisualCodeTool\MVVMCreater\obj\Debug\MvvmCreater.csproj.CoreCompileInputs.cache
+S:\StudyPlace\Unity3d\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.exe
+S:\StudyPlace\Unity3d\VisualCodeTool\MVVMCreater\obj\Debug\MVVMCreater.pdb
+S:\StudyPlace\Unity3d\VisualCodeTool\MVVMCreater\obj\Debug\MvvmCreater.csprojAssemblyReference.cache
