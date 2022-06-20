@@ -1,0 +1,103 @@
+﻿using System.Collections.Generic;
+using Loxodon.Framework.Messaging;
+using ZhiBenJia.ZHouse.Data.Measure;
+using ZhiBenJia.ZHouse.Mobile.Views.BlockList.ViewModel;
+using ZhiBenJia.ZHouse.Mobile.Views.MvVmBase;
+
+namespace ZhiBenJia.ZHouse.Mobile.Views.###.ViewModel
+{
+    public class ###ViewModel: ListViewModel<###ItemViewModel, ListBindStandardData>
+    {
+        public class Event
+       {
+         public const string UpdateList= "UpdateList_###Vm";
+       }
+      //当前选中索引
+        private int _selectIndex;
+        public int SelectIndex
+        {
+            get => _selectIndex;
+            set => Set(ref _selectIndex, value, "SelectIndex");
+        }
+       public ###ViewModel(IMessenger iMessage) : base(iMessage)
+        {
+            OnRegisterEvent();
+        }
+          public sealed override void OnRegisterEvent()
+         {
+           AddDisposable(Event.UpdateList, (List<ListBindStandardData> dataList) => { UpdateList(dataList); });
+         }
+       private void UpdateList(List<ListBindStandardData> dataList)
+       {
+            if (dataList == null)
+            {
+                ZHouseDebug.Debug("没有数据");
+                dataList=new List<ListBindDemoData>();
+            }
+          //数据是否要进行筛选
+          InitItems(dataList);
+        }
+          public override void InitItems(List<ListBindStandardData> dataList)
+        {
+            base.InitItems(dataList);
+            SelectIndex = -1;
+            Select(0);
+        }
+        protected override ###ItemViewModel CreateItem(ListBindStandardData data)
+        {
+            ###ItemViewModel model = new ###ItemViewModel(Messenger);
+            model.SetData(data);
+            return model;
+        }
+          private void Select(int index)
+        {
+            if (SelectIndex == index) return;
+
+            for (int i = 0; i < Items.Count; i++)
+            {
+                bool select = index == i;
+                if (select)
+                {
+                    SelectIndex = index;
+                     Items[i].SelectState(true);
+                     //根据具体情况使用选中并发送事件
+                     //  Items[i].OnClickSelect();
+                }
+                else
+                {
+                    Items[i].SelectState(false);
+                }
+            }
+        }
+          private void Select(string code)
+        {
+            if (Items.Count < 1)
+            {
+                return;
+            }
+            if (SelectIndex>=0)
+            {
+                if (Items.Count> SelectIndex)
+                {
+                    if (Items[SelectIndex].Data.DataId== code)
+                    {
+                        return;
+                    }
+                }
+            }
+
+            for (int i = 0; i < Items.Count; i++)
+            {
+                if (Items[SelectIndex].Data.DataId == code)
+                {
+                    SelectIndex = i;
+                    Items[i].SelectState(true);
+                }
+                else
+                {
+                    Items[i].SelectState(false);
+                }
+            }
+        }
+    }
+}

@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmCreater", "MVVMCreater\MvvmCreater.csproj", "{C3BB77A6-BB36-48D8-B22C-33971B86EFBD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VmCreater", "MVVMCreater\VmCreater.csproj", "{C3BB77A6-BB36-48D8-B22C-33971B86EFBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VmTool", "VmTool", "{9EA6B00C-206C-4E09-882D-5CE411BA5880}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +20,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3BB77A6-BB36-48D8-B22C-33971B86EFBD} = {9EA6B00C-206C-4E09-882D-5CE411BA5880}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F23B3089-2E69-4BBF-9EED-E5424D76B069}

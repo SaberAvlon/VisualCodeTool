@@ -1,0 +1,47 @@
+﻿using Loxodon.Framework.Messaging;
+using ZhiBenJia.ZHouse.Mobile.Views.MvVmBase;
+namespace ZhiBenJia.ZHouse.Mobile.Views.###.ViewModel
+{
+    public class ###ItemViewModel: DisposableViewModel
+    {
+        private ListBindStandardData _data;
+        public ListBindStandardData Data => _data;
+        private string _itemIcon;
+        public string ItemIcon
+        {
+            get => _itemIcon;
+            set => Set(ref _itemIcon, value, "ItemIcon");
+        }
+        private string _itemName;
+        public string ItemName
+        {
+            get => _itemName;
+            set => Set(ref _itemName, value, "ItemName");
+        }
+       private bool _isSelect;
+        public bool IsSelect
+        {
+            get => _isSelect;
+            set => this.Set(ref _isSelect, value, "IsSelect");
+        }
+       public ###ItemViewModel(IMessenger iMessage) : base(iMessage)
+        {
+       
+        }
+        public void SetData(ListBindStandardData data)
+        {
+               _data = data;
+            ItemName = data?.DataName;
+            ItemIcon =data?.DataIconUrl;
+        }
+        public void SelectState(bool select)
+        {
+            IsSelect = select;
+        }
+        public void OnClickSelect()
+        {
+            IsSelect =true;
+           //点击发送事件
+        }
+    }
+}

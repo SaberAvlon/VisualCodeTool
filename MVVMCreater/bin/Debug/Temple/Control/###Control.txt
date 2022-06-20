@@ -3,37 +3,53 @@ using ZhiBenJia.ZHouse.Mobile.Views.###.Model;
 using ZhiBenJia.ZHouse.Mobile.Views.###.View;
 using ZhiBenJia.ZHouse.Unity.Common;
 using ZhiBenJia.ZHouse.Unity.View;
+using ZhiBenJia.ZHouse.Data.Measure;
 
 namespace ZhiBenJia.ZHouse.Mobile.Views.###.Control
 {
     public class ###Control:ControlBase<###Control, ###Model>
     {
-        #region 字段属性
+  
 
-        #endregion
-
-        #region ControlBase
+        public class Event
+        {
+            public const string OpenView = "OpenView_###Event";
+            public const string CloseView = "CloseView_###Event";
+            public const string HideView = "HideView_###Event";
+        }
 
         protected override void OnRegisterEvent()
         {
-            EventDispatcher.Add(###Event.OpenView, OpenWindow);
-            EventDispatcher.Add(###Event.CloseView, CloseWindow);
+            EventDispatcher.Add(Event.OpenView , OpenWindow);
+            EventDispatcher.Add(Event.CloseView , CloseWindow);
         }
         
-        #endregion
+ 
 
-        #region 方法
+     
         private void OpenWindow()
-        {
+        { 
+            if (Model.IsWindowOpen)
+            {
+                ZHouseDebug.Debug("界面已打开");
+                return;
+            }
             Model.InitViewMode();
             FairyGuiManager.Inst.OpenView<###Window>();
+            Model.IsWindowOpen = true;
         }
 
         private void CloseWindow()
         {
+            if (!Model.IsWindowOpen)
+            {
+                ZHouseDebug.Debug("界面未打开");
+                return;
+            }
             FairyGuiManager.Inst.CloseView<###Window>();
+            Model.IsWindowOpen = false;
         }
 
-        #endregion
+    
     }
 }

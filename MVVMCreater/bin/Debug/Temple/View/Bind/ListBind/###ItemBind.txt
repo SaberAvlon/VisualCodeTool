@@ -1,0 +1,81 @@
+﻿using FairyGUI;
+using Loxodon.Framework.Binding;
+using Loxodon.Framework.Binding.Builder;
+using UnityEngine;
+using ZhiBenJia.ZHouse.Mobile.Views.###.ViewModel;
+
+
+namespace ZhiBenJia.ZHouse.Mobile.Views.###.View.Bind
+{
+    public class ###ItemBind: MonoBehaviour
+    {
+         private GButton _itemButton;
+           private GTextField _itemNameField;
+          private string _itemName;
+          public string ItemName
+        {
+            get => _itemName;
+            set
+            {
+                _itemName = value;
+                if (_itemNameField != null)
+                {
+                   _itemNameField.text = value;
+                }
+            }
+        }
+          private bool _isSelect;
+        public bool IsSelect
+        {
+            get => _isSelect;
+            set
+            {
+                _isSelect = value;
+                if (_itemButton != null)
+                {
+                    _itemButton.selected = value;
+                }
+            }
+        }
+        private string _itemIcon;
+        public string ItemIcon
+        {
+            get => _itemIcon;
+            set
+            {
+                _itemIcon = value;
+               // if (string.IsNullOrEmpty(_itemIcon)) return;
+
+              //  ResourceManager.LoadTextureWithSize(_itemIcon, 128, texture =>
+              //  {
+                    //if (texture != null && _itemButton?.LoadIcon?.texture != null)
+                  //  {
+                   //     _itemButton.LoadIcon.texture = new NTexture(texture);
+                   // }
+              //  });
+            }
+         }
+      public void SetBind(GObject obj)
+        {
+            _itemButton = (GButton)obj;
+            if (_itemButton != null)
+            {
+                _itemNameField = _itemButton.GetTextField();
+                CreateBind();
+            }
+        }
+
+        
+         private void CreateBind()
+        {
+            BindingSet<###ItemBind,###ItemViewModel> bindingSet =
+                this.CreateBindingSet<###ItemBind, ###ItemViewModel>();
+            bindingSet.Bind(this).For(v => v.ItemName).To(vm => vm.ItemName).OneWay();
+            bindingSet.Bind(this).For(v => v.ItemIcon).To(vm => vm.ItemIcon).OneWay();
+            bindingSet.Bind(this).For(v => v.IsSelect).To(vm => vm.IsSelect).OneWay();
+            bindingSet.Bind(_itemButton).For(v => v.onClick).To(vm => vm.OnClickSelect).OneWay();
+            bindingSet.Build();
+
+        }
+    }
+}

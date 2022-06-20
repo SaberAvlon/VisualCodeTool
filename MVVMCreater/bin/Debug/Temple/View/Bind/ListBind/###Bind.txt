@@ -1,0 +1,49 @@
+﻿using FairyGUI;
+using Loxodon.Framework.Binding;
+using UnityEngine;
+using ZhiBenJia.ZHouse.Mobile.Views.###.Control;
+using ZhiBenJia.ZHouse.Mobile.Views.###.ViewModel;
+using ZhiBenJia.ZHouse.Mobile.Views.Skin.###Window;
+
+namespace ZhiBenJia.ZHouse.Mobile.Views.###.View.Bind
+{
+    public class ###Bind : ListViewModelBind<###ItemViewModel>
+    {
+        private SkinMain _skinMain;
+
+       
+         public override void SetData(GComponent main)
+        {
+            _skinMain = main as SkinMain;
+            if (_skinMain == null)
+            {
+                return;
+            }
+            // GList = _skinMain.
+           //   GList.SetVirtual();
+        }
+
+       public override void CreateBind()
+        {
+            var viewModel = ###Control.Model.###Vm;
+            this.CreateBindingSet(viewModel);
+            var bindingSet = this.CreateBindingSet<###Bind, ###ViewModel>();
+            bindingSet.Bind(this).For(v => v.Items).To(vm => vm.Items).OneWay();
+            bindingSet.Build();
+        }
+        public override void RenderListItem(int index, GObject obj)
+        {
+            var itemView = obj.displayObject.gameObject.GetComponent<###ItemBind>();
+            if (itemView != null)
+            {
+                itemView.SetDataContext(Items[index]);
+            }
+            else
+            {
+                itemView = ViewBind.BindView<###ItemBind>(obj.displayObject.gameObject);
+                itemView.SetDataContext(Items[index]);
+                itemView.SetBind(obj);
+            }
+        }
+    }
+}
